@@ -12,7 +12,8 @@
     "test:integration": "vitest run --project integration",
     "lambda:build": "tsx scripts/build-lambda.ts",
     "lambda:simulate": "tsx scripts/simulate-s3-event.ts",
-    "smoke": "tsx scripts/smoke-local.ts"
+    "smoke": "tsx scripts/smoke-local.ts",
+    "dev:s3-events": "tsx scripts/local-s3-events.ts"
   },
   "type": "module",
   "private": "true",

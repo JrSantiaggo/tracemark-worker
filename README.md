@@ -35,6 +35,7 @@ cp .env.example .env     # copie INTERNAL_API_TOKEN e as chaves AWS_* do .env da
 docker compose up -d     # SQS local (ElasticMQ), com fila e DLQ já criadas
 npm run dev              # inicia o Worker
 npm run smoke            # fluxo completo: upload → Lambda → Worker → foto publicada
+npm run dev:s3-events    # emula o evento do S3 → Lambda para uploads feitos pelo frontend
 ```
 
 | Script | Função |
