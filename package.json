@@ -1,0 +1,42 @@
+{
+  "name": "tracemark-worker",
+  "version": "0.1.0",
+  "description": "Worker e Lambda de processamento de imagens do TraceMark",
+  "scripts": {
+    "dev": "tsx watch src/worker.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/worker.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "lambda:build": "tsx scripts/build-lambda.ts",
+    "lambda:simulate": "tsx scripts/simulate-s3-event.ts",
+    "smoke": "tsx scripts/smoke-local.ts"
+  },
+  "type": "module",
+  "private": "true",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1164.0",
+    "@aws-sdk/client-sqs": "^3.1164.0",
+    "dotenv": "^18.0.9",
+    "pino": "^10.4.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "pino-pretty": "^13.2.0",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "vitest": "^4.1.12"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
